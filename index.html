@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraphrasing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><u>Paraphasing Tool</u></h1>
+        <textarea id="inputText" placeholder="Enter text to paraphrase..."></textarea>
+        <div class="btn">
+        <button id="btn">Paraphrase</button>
+    </div> <br>
+        
+        <textarea id="outputText" placeholder="Paraphrased text will appear here..." readonly></textarea>
+        <div class="footer">
+            <p>Developed with ❤️ By Eshan Iqbal & Arbeena Hassan...</p>
+        </div>
+        <div class="socialmedia">
+            <a  href="https://github.com/Eshaniqbal"><i class="fa-brands fa-github"></i></a>
+           &nbsp; &nbsp;
+            <a id="two" href="https://www.linkedin.com/in/eshan-iqbal-a8678b252/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+   
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            const inputText = document.getElementById('inputText').value;
+
+            fetch('http://localhost:5000/paraphrase', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ inputText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('outputText').value = data.paraphrasedText;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(56, 56, 56);
+}
+h1:hover{
+    color: white;
+    background-color: black;
+    transition: ease 1s;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.991);
+    background-color: #fff;
+  
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1 {
+    font-size: 40px;
+    font-family: "Caveat", cursive;
+    margin-bottom: 20px;
+
+}
+
+/* Textarea styles */
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   
+    resize: vertical; /* Allowing vertical resizing */
+}
+textarea:focus{
+   outline: none;
+    border: 1px solid black;
+}
+
+/* Button styles */
+button {
+    
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+ 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+h1{
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Adjusting container width for smaller screens */
+    }
+}
+
+button:hover {
+box-shadow: 5px 5px black;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+/* Output textarea styles */
+#outputText {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: "Caveat", cursive;
+    filter: grayscale();
+}
+.socialmedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+font-size: 15px;
+filter: grayscale();
+
+}
+.socialmedia a:hover i.fa-linkedin{
+transition: ease 0.6s;
+    transform: scale(1.2);
+
+}
+.socialmedia a:hover i.fa-github{
+transition: ease 0.6s;
+    transform: scale(1.2);
+
+}
